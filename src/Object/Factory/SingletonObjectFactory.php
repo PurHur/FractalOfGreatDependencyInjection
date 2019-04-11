@@ -15,6 +15,6 @@ class SingletonObjectFactory implements ObjectFactoryInterface
 	 * @return object
 	 */
 	public function getObjectInstance($class) {
-		return new \Object\Proxy\LazyLoadingSingletonProxy($class);
+		return new \Object\Proxy\LazyLoadingProxy($class);
 	}
 }
