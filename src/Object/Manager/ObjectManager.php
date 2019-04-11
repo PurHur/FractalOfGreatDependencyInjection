@@ -91,6 +91,7 @@ class ObjectManager implements ObjectManagerInterface
     /**
      * @param $className
      * @return \Object\Factory\NaiveObjectFactory|\Object\Factory\SingletonObjectFactory|\Object\Traits\Singleton
+     * @todo use the objectmanger self to get the factories. 
      */
     public static function getFactoryForClass($className)
     {
