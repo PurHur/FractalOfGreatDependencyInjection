@@ -19,17 +19,17 @@ class TestController
      * @var SimpleSingletonService
      * @inject
      */
-    protected $annotationInjectedSingleton;
+    public $annotationInjectedSingleton;
     
     /**
      * @var SimpleSingletonService
      */
-    protected $constructorInjectedSingleton;
+    public $constructorInjectedSingleton;
 
     /**
      * @var SimpleSingletonService
      */
-    protected $constructorInjectedSingleton;
+    public $constructorInjectedSingleton;
 
     /**
      * ComplexTestService constructor.
