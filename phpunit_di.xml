@@ -1,0 +1,17 @@
+<phpunit bootstrap="tests/bootstrap.php" backupGlobals="false">
+    <testsuites>
+        <testsuite name="DependencyInjection">
+            <directory>tests/Integration</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>*</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <ini name="display_errors" value="true"/>
+    </php>
+</phpunit>

@@ -1,0 +1,15 @@
+{
+    "name": "purhur/fractal-of-great-dependency-injection",
+    "description": "a collection of dependecy injection concepts",
+    "type": "metapackage",
+    "autoload": {
+        "classmap": [
+            "src/",
+            "tests/INtegration/TestApplication"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
+    },
+    "license": "GPL"
+}
