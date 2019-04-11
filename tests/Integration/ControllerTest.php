@@ -18,6 +18,11 @@ class ControllerTest extends \PHPUnit\Framework\TestCase
             \TestApplication\Service\SimpleSingletonService::class,
             $testControllerInstance->getAnnotationInjectedSingleton()
         );
+        
+        $this->assertInstanceOf(
+            \TestApplication\Service\SimpleSingletonService::class,
+            $testControllerInstance->getInjectionMethodInjectedSingleton()
+        );
 
         $staticCallInjectedSingleton = \Object\Manager\ObjectManager::get(\TestApplication\Service\SimpleSingletonService::class);
 
@@ -34,6 +39,11 @@ class ControllerTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame(
             $testControllerInstance->getConstructorInjectedSingleton(),
+            $staticCallInjectedSingleton
+        );
+        
+        $this->assertSame(
+            $testControllerInstance->getInjectionMethodInjectedSingleton(),
             $staticCallInjectedSingleton
         );
     }
