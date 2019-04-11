@@ -20,6 +20,11 @@ class TestController
      * @inject
      */
     protected $annotationInjectedSingleton;
+    
+    /**
+     * @var SimpleSingletonService
+     */
+    protected $constructorInjectedSingleton;
 
     /**
      * @var SimpleSingletonService
@@ -34,6 +39,10 @@ class TestController
     {
         $this->constructorInjectedSingleton = $contructorInjectedSingleton;
     }
+    
+    public function injectInjectionMethodInjectedSingleton(SimpleSingletonService $injectionMethodInjectedSingleton) {
+        $this->injectionMethodInjectedSingleton = $injectionMethodInjectedSingleton;
+    }
 
     /**
      * Now we testing the service with all possible calls
@@ -41,6 +50,10 @@ class TestController
 
     public function testAnnotationInjectionAction() {
         return $this->annotationInjectedSingleton->add($this->a,$this->b);
+    }
+    
+    public function testInjectionMethodInjectionAction() {
+        return $this->injectionMethodInjectedSingleton->add($this->a,$this->b);
     }
 
     public function testConstructorInjectionAction() {
