@@ -24,7 +24,7 @@ class TestController
     /**
      * @var SimpleSingletonService
      */
-    public $constructorInjectedSingleton;
+    public $injectionMethodInjectedSingleton;
 
     /**
      * @var SimpleSingletonService
