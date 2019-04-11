@@ -11,20 +11,22 @@ class ControllerTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(
             \TestApplication\Service\SimpleSingletonService::class,
-            $testControllerInstance->getConstructorInjectedSingleton()
+            $testControllerInstance->$constructorInjectedSingleton
         );
 
         $this->assertInstanceOf(
             \TestApplication\Service\SimpleSingletonService::class,
-            $testControllerInstance->getAnnotationInjectedSingleton()
+            $testControllerInstance->$annotationInjectedSingleton
         );
         
         $this->assertInstanceOf(
             \TestApplication\Service\SimpleSingletonService::class,
-            $testControllerInstance->getInjectionMethodInjectedSingleton()
+            $testControllerInstance->$injectionMethodInjectedSingleton
         );
 
-        $staticCallInjectedSingleton = \Object\Manager\ObjectManager::get(\TestApplication\Service\SimpleSingletonService::class);
+        $staticCallInjectedSingleton = \Object\Manager\ObjectManager::get(
+            \TestApplication\Service\SimpleSingletonService::class
+        );
 
         $this->assertInstanceOf(
             \TestApplication\Service\SimpleSingletonService::class,
@@ -33,17 +35,17 @@ class ControllerTest extends \PHPUnit\Framework\TestCase
 
 
         $this->assertSame(
-            $testControllerInstance->getConstructorInjectedSingleton(),
-            $testControllerInstance->getAnnotationInjectedSingleton()
+            $testControllerInstance->$constructorInjectedSingleton,
+            $testControllerInstance->$annotationInjectedSingleton
         );
 
         $this->assertSame(
-            $testControllerInstance->getConstructorInjectedSingleton(),
+            $testControllerInstance->$constructorInjectedSingleton,
             $staticCallInjectedSingleton
         );
         
         $this->assertSame(
-            $testControllerInstance->getInjectionMethodInjectedSingleton(),
+            $testControllerInstance->$injectionMethodInjectedSingleton,
             $staticCallInjectedSingleton
         );
     }
